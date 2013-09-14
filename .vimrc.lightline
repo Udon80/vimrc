@@ -1,0 +1,10 @@
+if has("gui_running")
+	set ambiwidth=single
+	let g:lightline = {
+		  \ 'separator': { 'left': '', 'right': '' },
+		  \ 'subseparator': { 'left': '', 'right': '' }
+		  \ }
+endif
+
+" Do not show '--INSERT--'
+au BufEnter * set noshowmode

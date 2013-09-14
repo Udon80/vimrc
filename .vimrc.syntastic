@@ -1,0 +1,20 @@
+" Always check syntax when opening a file
+" let g:syntastic_check_on_open=1
+
+" Use pretty symbols
+let g:syntastic_error_symbol   = '✗'
+let g:syntastic_warning_symbol = '•'
+
+" Auto open error window
+let g:syntastic_auto_loc_list=1
+nnoremap <silent> ,Q :SyntasticCheck<CR>:ccl<CR>:Errors<CR>
+
+" Set height of the error window
+let g:syntastic_loc_list_height=5
+
+" Set gdmd as d syntaxchecker
+let g:syntastic_d_compiler = 'gdmd'
+
+" Set g++-4.8.0 -std=c++11 as C++ syntaxchecker
+let g:syntastic_cpp_compiler         = '/Users/soishi/opt/gdc/bin/g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -Wall -Wno-sign-compare -Wno-unknown-pragmas'

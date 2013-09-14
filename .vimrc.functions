@@ -1,0 +1,74 @@
+" A wrapper function to restore the cursor position, window position,
+" and last search after running a command.
+" (Taken from https://docwhat.org/vim-preserve-your-cursor-and-window-state/)
+function! Preserve(command)
+	" Save the last search
+	let last_search=@/
+	" Save the current cursor position
+	let save_cursor = getpos(".")
+	" Save the window position
+	normal H
+	let save_window = getpos(".")
+	call setpos('.', save_cursor)
+
+	" Do the business:
+	execute a:command
+
+	" Restore the last_search
+	let @/=last_search
+	" Restore the window position
+	call setpos('.', save_window)
+	normal zt
+	" Restore the cursor position
+	call setpos('.', save_cursor)
+endfunction
+
+
+"""
+" Do not auto-insert comments when breaking lines
+command! SuppressAutoComment     setlocal formatoptions-=r <bar> setlocal formatoptions-=o
+" Do not use textwidth
+command! SuppressTextWidthFormat setlocal formatoptions-=t <bar> setlocal formatoptions-=c <bar> setlocal formatoptions-=l
+
+
+"""
+" Show Strange Tabs and Spaces
+function! ShowStrangeSpaceCharacters ()
+	hi link StrangeSpace Error
+	call NoShowStrangeSpaceCharacters()
+	let tabFollowingNonTab   = '[^[:tab:]]\zs\t\+'
+	let spaceAtLineBeginning = '^ \+'
+	let trailingSpaceAndTab  = '\s\+$'
+	let w:strangeSpaceMatch  = matchadd("StrangeSpace", tabFollowingNonTab . '\|' . spaceAtLineBeginning . '\|' . trailingSpaceAndTab)
+endfunction
+
+function! NoShowStrangeSpaceCharacters ()
+	silent! call matchdelete(w:strangeSpaceMatch)
+endfunction
+
+command! -bar   ShowStrangeSpaceCharacters call   ShowStrangeSpaceCharacters()
+command! -bar NoShowStrangeSpaceCharacters call NoShowStrangeSpaceCharacters()
+
+
+"""
+" Remove Unwanted Spaces
+command! -bar -range=% RemoveTrailingSpaceCharacters silent! <line1>,<line2>s/\s\+$//
+
+
+"""
+" SuperRetab (Taken from http://vim.wikia.com/wiki/Super_retab)
+command! -nargs=1 -range=% SuperRetab silent! <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+
+
+"""
+" FormatTabAndSpace
+function! FormatTabAndSpace (ts)
+	setlocal expandtab
+	retab! a:ts
+	RemoveTrailingSpaceCharacters
+	execute '%SuperRetab ' . a:ts
+	set expandtab<
+	normal ``
+endfunction
+
+command! -bar FormatTabAndSpace call Preserve("call FormatTabAndSpace(&tabstop)")

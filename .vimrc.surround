@@ -1,0 +1,4 @@
+" surround a indent with '{'
+nmap <silent> ,{ viIS{kJj]}
+" remove surrounding {
+nmap <silent> ,} [{x]}x

@@ -1,0 +1,6 @@
+" use keys close to home position
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" use ,?
+let g:EasyMotion_leader_key=","
+" prefer 1-stroke selection
+let g:EasyMotion_grouping=1
