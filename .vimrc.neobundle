@@ -37,9 +37,9 @@ NeoBundle 'itchyny/lightline.vim'           " Alter StatusLine
 source ~/.vim/.vimrc.lightline
 NeoBundle 'scrooloose/syntastic'            " Enable Syntax Checking
 source ~/.vim/.vimrc.syntastic
+NeoBundle 'tpope/vim-fugitive'              " Use git from vim
 
 """ Original repos on github
-" NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 """ vim-scripts repos
