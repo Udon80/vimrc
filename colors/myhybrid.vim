@@ -27,5 +27,5 @@ hi Visual cterm=reverse guibg=#272b51
 " Vert Split
 if has('gui_running')
 	set ambiwidth=single
-	exe "set fillchars=vert:┃"
+	exe "set fillchars=vert:┃,diff:⎼,fold:⎼"
 endif
