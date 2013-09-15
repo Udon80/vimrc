@@ -113,6 +113,9 @@ set showcmd
 " do not do incremental searching
 set noincsearch
 
+" Scroll earlier
+set scrolloff=20
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
