@@ -101,6 +101,9 @@ set backupdir=~/.backup
 " do not keep a backup file
 set backup
 
+" keep many undo history
+set undolevels=100000000
+
 " keep 50 lines of command line history
 set history=50
 
