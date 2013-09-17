@@ -11,7 +11,7 @@ syntax match dFunctionDefinitionAft /\%(\<[A-Za-z_][0-9A-Za-z_]*\>.*\%(!(.*)\)\?
 hi dFunctionDefinitionAft guifg=#a898b0
 
 " Hilight std.???
-syntax match dSTDModule /std\.[a-zA-Z_][a-zA-Z0-9_]*/ containedin=paramlist,dImport
+syntax match dSTDModule /\<std\.[a-zA-Z_][a-zA-Z0-9_]*\.\?/ containedin=paramlist,dImport
 hi dSTDModule guifg=#a5ad98
 
 " Syntax based folding
