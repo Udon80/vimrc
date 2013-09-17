@@ -12,7 +12,7 @@ hi dFunctionDefinitionAft guifg=#a898b0
 
 " Hilight std.???
 syntax match dSTDModule /std\.[a-zA-Z_][a-zA-Z0-9_]*/ containedin=paramlist,dImport
-hi dSTDModule guifg=#45bdb8
+hi dSTDModule guifg=#a5ad98
 
 " Syntax based folding
 setlocal foldmethod=syntax
