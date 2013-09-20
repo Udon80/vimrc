@@ -5,6 +5,9 @@ set nocompatible
 " import functions
 source ~/.vim/.vimrc.functions
 
+" Use qwerty in normal mode
+source ~/.vim/.vimrc.dvorak
+
 " Use NeoBundle
 " .vimrc.neobundle imports several plugins, and sources some .vimrcs specific to those plugins
 source ~/.vim/.vimrc.neobundle
