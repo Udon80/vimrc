@@ -17,27 +17,28 @@ NeoBundle 'Shougo/vimproc'
 "
 " Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'Shougo/unite.vim'                " Enable ',,', ',y', etc.
+NeoBundle 'Shougo/unite.vim'                 " Enable ',,', ',y', etc.
 source ~/.vim/.vimrc.unite
-NeoBundle 'michaeljsmith/vim-indent-object' " Enable ai ii ...
-NeoBundle 'kana/vim-scratch'                " Implement Scratch buffer like in emacs
-NeoBundle 'Shougo/neocomplcache'            " Autocomplete
+NeoBundle 'michaeljsmith/vim-indent-object'  " Enable ai ii ...
+NeoBundle 'kana/vim-scratch'                 " Implement Scratch buffer like in emacs
+NeoBundle 'Shougo/neocomplcache'             " Autocomplete
 source ~/.vim/.vimrc.neocomplcache
-NeoBundle 'Shougo/vimshell'                 " Shell implemented in vim script language
-NeoBundle 'tpope/vim-surround'              " Enable s commands
+NeoBundle 'Shougo/vimshell'                  " Shell implemented in vim script language
+NeoBundle 'tpope/vim-surround'               " Enable s commands
 source ~/.vim/.vimrc.surround
-NeoBundle 'tpope/vim-repeat'                " Enable . to repeat commands extended by plugins
-NeoBundle 'h1mesuke/vim-alignta'            " Enable :Alignta
-NeoBundle 'Lokaltog/vim-easymotion'         " Enable ,f
+NeoBundle 'tpope/vim-repeat'                 " Enable . to repeat commands extended by plugins
+NeoBundle 'h1mesuke/vim-alignta'             " Enable :Alignta
+NeoBundle 'Lokaltog/vim-easymotion'          " Enable ,f
 source ~/.vim/.vimrc.easymotion
-NeoBundle 'tpope/vim-commentary'            " Enable \\
-NeoBundle 'kana/vim-textobj-user'           " Required by textobj-entire
-NeoBundle 'kana/vim-textobj-entire'         " Enable ie, ae
-NeoBundle 'itchyny/lightline.vim'           " Alter StatusLine
+NeoBundle 'tpope/vim-commentary'             " Enable \\
+NeoBundle 'kana/vim-textobj-user'            " Required by textobj-entire
+NeoBundle 'kana/vim-textobj-entire'          " Enable ie, ae
+NeoBundle 'itchyny/lightline.vim'            " Alter StatusLine
 source ~/.vim/.vimrc.lightline
-NeoBundle 'scrooloose/syntastic'            " Enable Syntax Checking
+NeoBundle 'scrooloose/syntastic'             " Enable Syntax Checking
 source ~/.vim/.vimrc.syntastic
-NeoBundle 'tpope/vim-fugitive'              " Use git from vim
+NeoBundle 'tpope/vim-fugitive'               " Use git from vim
+NeoBundle 'octol/vim-cpp-enhanced-highlight' " Enhanced highlighting for C++
 
 """ Original repos on github
 " NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
