@@ -23,3 +23,9 @@ hi CursorIM guibg=#57ab51 guifg=NONE
 
 " Set Visual Color
 hi Visual cterm=reverse guibg=#272b51
+
+" Vert Split
+if has('gui_running')
+	set ambiwidth=single
+	exe "set fillchars=vert:┃,diff:⎼,fold:⎼"
+endif
